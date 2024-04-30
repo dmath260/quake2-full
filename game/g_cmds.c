@@ -869,6 +869,52 @@ void Cmd_Say_f (edict_t *ent, qboolean team, qboolean arg0)
 	}
 }
 
+static void
+Cmd_SpawnEntity_f(edict_t* ent)
+{
+	if (!ent)
+	{
+		return;
+	}
+
+	if ((deathmatch->value || coop->value) && !sv_cheats->value)
+	{
+		gi.cprintf(ent, PRINT_HIGH,
+			"You must run the server with '+set cheats 1' to enable this command.\n");
+		return;
+	}
+
+	if (gi.argc() < 5 || gi.argc() > 9)
+	{
+		gi.cprintf(ent, PRINT_HIGH,
+			"Usage: spawnentity classname x y z <angle_x angle_y angle_z> <flags>\n");
+		return;
+	}
+
+	ent = G_Spawn();
+
+	// set position
+	ent->s.origin[0] = atof(gi.argv(2));
+	ent->s.origin[1] = atof(gi.argv(3));
+	ent->s.origin[2] = atof(gi.argv(4));
+	// angles
+	if (gi.argc() >= 8)
+	{
+		ent->s.angles[0] = atof(gi.argv(5));
+		ent->s.angles[1] = atof(gi.argv(6));
+		ent->s.angles[2] = atof(gi.argv(7));
+	}
+	// flags
+	if (gi.argc() >= 9)
+	{
+		ent->spawnflags = atoi(gi.argv(8));
+	}
+
+	ent->classname = G_CopyString(gi.argv(1));
+
+	ED_CallSpawn(ent);
+}
+
 void Cmd_PlayerList_f(edict_t *ent)
 {
 	int i;
@@ -987,6 +1033,8 @@ void ClientCommand (edict_t *ent)
 		Cmd_Wave_f (ent);
 	else if (Q_stricmp(cmd, "playerlist") == 0)
 		Cmd_PlayerList_f(ent);
+	else if (Q_stricmp(cmd, "spawnentity") == 0)
+		Cmd_SpawnEntity_f(ent);
 	else	// anything that doesn't match a command will be a chat
 		Cmd_Say_f (ent, false, true);
 }

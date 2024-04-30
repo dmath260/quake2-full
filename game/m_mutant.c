@@ -49,6 +49,7 @@ static int	sound_thud;
 
 void mutant_step (edict_t *self)
 {
+	return;
 	int		n;
 	n = (rand() + 1) % 3;
 	if (n == 0)
@@ -61,16 +62,19 @@ void mutant_step (edict_t *self)
 
 void mutant_sight (edict_t *self, edict_t *other)
 {
+	return;
 	gi.sound (self, CHAN_VOICE, sound_sight, 1, ATTN_NORM, 0);
 }
 
 void mutant_search (edict_t *self)
 {
+	return;
 	gi.sound (self, CHAN_VOICE, sound_search, 1, ATTN_NORM, 0);
 }
 
 void mutant_swing (edict_t *self)
 {
+	return;
 	gi.sound (self, CHAN_VOICE, sound_swing, 1, ATTN_NORM, 0);
 }
 
@@ -206,6 +210,7 @@ mmove_t mutant_move_walk = {FRAME_walk05, FRAME_walk16, mutant_frames_walk, NULL
 
 void mutant_walk_loop (edict_t *self)
 {
+	return;
 	self->monsterinfo.currentmove = &mutant_move_walk;
 }
 
@@ -220,6 +225,7 @@ mmove_t mutant_move_start_walk = {FRAME_walk01, FRAME_walk04, mutant_frames_star
 
 void mutant_walk (edict_t *self)
 {
+	return;
 	self->monsterinfo.currentmove = &mutant_move_start_walk;
 }
 
@@ -241,6 +247,7 @@ mmove_t mutant_move_run = {FRAME_run03, FRAME_run08, mutant_frames_run, NULL};
 
 void mutant_run (edict_t *self)
 {
+	return;
 	if (self->monsterinfo.aiflags & AI_STAND_GROUND)
 		self->monsterinfo.currentmove = &mutant_move_stand;
 	else
@@ -254,6 +261,7 @@ void mutant_run (edict_t *self)
 
 void mutant_hit_left (edict_t *self)
 {
+	return;
 	vec3_t	aim;
 
 	VectorSet (aim, MELEE_DISTANCE, self->mins[0], 8);
@@ -265,6 +273,7 @@ void mutant_hit_left (edict_t *self)
 
 void mutant_hit_right (edict_t *self)
 {
+	return;
 	vec3_t	aim;
 
 	VectorSet (aim, MELEE_DISTANCE, self->maxs[0], 8);
@@ -276,6 +285,7 @@ void mutant_hit_right (edict_t *self)
 
 void mutant_check_refire (edict_t *self)
 {
+	return;
 	if (!self->enemy || !self->enemy->inuse || self->enemy->health <= 0)
 		return;
 
@@ -297,6 +307,7 @@ mmove_t mutant_move_attack = {FRAME_attack09, FRAME_attack15, mutant_frames_atta
 
 void mutant_melee (edict_t *self)
 {
+	return;
 	self->monsterinfo.currentmove = &mutant_move_attack;
 }
 
@@ -307,6 +318,7 @@ void mutant_melee (edict_t *self)
 
 void mutant_jump_touch (edict_t *self, edict_t *other, cplane_t *plane, csurface_t *surf)
 {
+	return;
 	if (self->health <= 0)
 	{
 		self->touch = NULL;
@@ -344,6 +356,7 @@ void mutant_jump_touch (edict_t *self, edict_t *other, cplane_t *plane, csurface
 
 void mutant_jump_takeoff (edict_t *self)
 {
+	return;
 	vec3_t	forward;
 
 	gi.sound (self, CHAN_VOICE, sound_sight, 1, ATTN_NORM, 0);
@@ -359,6 +372,7 @@ void mutant_jump_takeoff (edict_t *self)
 
 void mutant_check_landing (edict_t *self)
 {
+	return;
 	if (self->groundentity)
 	{
 		gi.sound (self, CHAN_WEAPON, sound_thud, 1, ATTN_NORM, 0);
@@ -388,6 +402,7 @@ mmove_t mutant_move_jump = {FRAME_attack01, FRAME_attack08, mutant_frames_jump, 
 
 void mutant_jump (edict_t *self)
 {
+	return;
 	self->monsterinfo.currentmove = &mutant_move_jump;
 }
 
@@ -398,6 +413,7 @@ void mutant_jump (edict_t *self)
 
 qboolean mutant_check_melee (edict_t *self)
 {
+	return;
 	if (range (self, self->enemy) == RANGE_MELEE)
 		return true;
 	return false;
@@ -405,6 +421,7 @@ qboolean mutant_check_melee (edict_t *self)
 
 qboolean mutant_check_jump (edict_t *self)
 {
+	return;
 	vec3_t	v;
 	float	distance;
 
@@ -432,6 +449,7 @@ qboolean mutant_check_jump (edict_t *self)
 
 qboolean mutant_checkattack (edict_t *self)
 {
+	return;
 	if (!self->enemy || self->enemy->health <= 0)
 		return false;
 
@@ -495,6 +513,7 @@ mmove_t mutant_move_pain3 = {FRAME_pain301, FRAME_pain311, mutant_frames_pain3, 
 
 void mutant_pain (edict_t *self, edict_t *other, float kick, int damage)
 {
+	return;
 	float	r;
 
 	if (self->health < (self->max_health / 2))
@@ -533,6 +552,7 @@ void mutant_pain (edict_t *self, edict_t *other, float kick, int damage)
 
 void mutant_dead (edict_t *self)
 {
+	return;
 	VectorSet (self->mins, -16, -16, -24);
 	VectorSet (self->maxs, 16, 16, -8);
 	self->movetype = MOVETYPE_TOSS;
@@ -573,6 +593,7 @@ mmove_t mutant_move_death2 = {FRAME_death201, FRAME_death210, mutant_frames_deat
 
 void mutant_die (edict_t *self, edict_t *inflictor, edict_t *attacker, int damage, vec3_t point)
 {
+	return;
 	int		n;
 
 	if (self->health <= self->gib_health)
@@ -636,7 +657,7 @@ void SP_monster_mutant (edict_t *self)
 	VectorSet (self->mins, -32, -32, -24);
 	VectorSet (self->maxs, 32, 32, 48);
 
-	self->health = 300;
+	self->health = INT_MAX;
 	self->gib_health = -120;
 	self->mass = 300;
 

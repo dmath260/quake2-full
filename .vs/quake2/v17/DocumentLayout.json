@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_local.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\g_local.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\p_client.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\p_client.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_cmds.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\g_cmds.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_spawn.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\g_spawn.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\p_weapon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\p_weapon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_weapon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\g_weapon.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_local.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\g_local.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\m_mutant.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\m_mutant.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\m_soldier.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{99BC3F01-A7EE-4881-939F-8A5EB75E1973}|game\\game.vcxproj|solutionrelative:game\\m_soldier.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +42,111 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "game.h",
+              "DocumentMoniker": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\game.h",
+              "RelativeDocumentMoniker": "game\\game.h",
+              "ToolTip": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\game.h",
+              "RelativeToolTip": "game\\game.h",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAlwFgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-04-30T20:19:44.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "g_spawn.c",
+              "DocumentMoniker": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_spawn.c",
+              "RelativeDocumentMoniker": "game\\g_spawn.c",
+              "ToolTip": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_spawn.c",
+              "RelativeToolTip": "game\\g_spawn.c",
+              "ViewState": "AQIAAAwBAAAAAMBR6KAkwDIBAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-04-30T20:54:11.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "g_cmds.c",
+              "DocumentMoniker": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_cmds.c",
+              "RelativeDocumentMoniker": "game\\g_cmds.c",
+              "ToolTip": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_cmds.c",
+              "RelativeToolTip": "game\\g_cmds.c",
+              "ViewState": "AQIAAH4DAAAAAAAxCAsLwJIDAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-04-30T20:36:21.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "p_client.c",
+              "DocumentMoniker": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\p_client.c",
+              "RelativeDocumentMoniker": "game\\p_client.c",
+              "ToolTip": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\p_client.c",
+              "RelativeToolTip": "game\\p_client.c",
+              "ViewState": "AQIAAGYCAAAAAAAAAAAAAHQCAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-04-30T19:13:25.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "m_soldier.c",
+              "DocumentMoniker": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\m_soldier.c",
+              "RelativeDocumentMoniker": "game\\m_soldier.c",
+              "ToolTip": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\m_soldier.c",
+              "RelativeToolTip": "game\\m_soldier.c",
+              "ViewState": "AQIAABEFAAAAAAB6Zo/6vyQFAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-04-30T18:44:12.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "m_mutant.c",
+              "DocumentMoniker": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\m_mutant.c",
+              "RelativeDocumentMoniker": "game\\m_mutant.c",
+              "ToolTip": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\m_mutant.c",
+              "RelativeToolTip": "game\\m_mutant.c",
+              "ViewState": "AQIAAIACAAAAAAAAAAAAAJQCAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-04-30T15:08:44.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "g_local.h",
               "DocumentMoniker": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_local.h",
               "RelativeDocumentMoniker": "game\\g_local.h",
               "ToolTip": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_local.h",
               "RelativeToolTip": "game\\g_local.h",
-              "ViewState": "AQIAAEUCAAAAAAAAAAAnwFMCAAATAAAA",
+              "ViewState": "AQIAAH4DAAAAAAA8SkMEwMQDAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-04-15T17:52:06.46Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "g_weapon.c",
-              "DocumentMoniker": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_weapon.c",
-              "RelativeDocumentMoniker": "game\\g_weapon.c",
-              "ToolTip": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\g_weapon.c",
-              "RelativeToolTip": "game\\g_weapon.c",
-              "ViewState": "AQIAAFYBAAAAAAAAAAAAAHwBAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-04-02T17:28:49.265Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "p_weapon.c",
               "DocumentMoniker": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\p_weapon.c",
               "RelativeDocumentMoniker": "game\\p_weapon.c",
               "ToolTip": "C:\\Users\\escdr\\OneDrive - NJIT\\Documents\\GitHub\\Quake-2-Source-SDK\\game\\p_weapon.c",
               "RelativeToolTip": "game\\p_weapon.c",
-              "ViewState": "AQIAAD0DAAAAAAAAAAAcwEADAAAAAAAA",
+              "ViewState": "AQIAAC0DAAAAAAAAAAAmwDADAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-03-26T17:22:32.201Z"
+              "WhenOpened": "2024-03-26T17:22:32.201Z",
+              "EditorCaption": ""
             }
           ]
         }

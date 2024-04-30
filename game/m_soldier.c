@@ -49,6 +49,7 @@ void soldier_idle (edict_t *self)
 
 void soldier_cock (edict_t *self)
 {
+	return;
 	if (self->s.frame == FRAME_stand322)
 		gi.sound (self, CHAN_WEAPON, sound_cock, 1, ATTN_IDLE, 0);
 	else
@@ -461,6 +462,7 @@ static int machinegun_flash [] = {MZ2_SOLDIER_MACHINEGUN_1, MZ2_SOLDIER_MACHINEG
 
 void soldier_fire (edict_t *self, int flash_number)
 {
+	return;
 	vec3_t	start;
 	vec3_t	forward, right, up;
 	vec3_t	aim;
@@ -527,11 +529,13 @@ void soldier_fire (edict_t *self, int flash_number)
 
 void soldier_fire1 (edict_t *self)
 {
+	return;
 	soldier_fire (self, 0);
 }
 
 void soldier_attack1_refire1 (edict_t *self)
 {
+	return;
 	if (self->s.skinnum > 1)
 		return;
 
@@ -546,6 +550,7 @@ void soldier_attack1_refire1 (edict_t *self)
 
 void soldier_attack1_refire2 (edict_t *self)
 {
+	return;
 	if (self->s.skinnum < 2)
 		return;
 
@@ -577,11 +582,13 @@ mmove_t soldier_move_attack1 = {FRAME_attak101, FRAME_attak112, soldier_frames_a
 
 void soldier_fire2 (edict_t *self)
 {
+	return;
 	soldier_fire (self, 1);
 }
 
 void soldier_attack2_refire1 (edict_t *self)
 {
+	return;
 	if (self->s.skinnum > 1)
 		return;
 
@@ -596,6 +603,7 @@ void soldier_attack2_refire1 (edict_t *self)
 
 void soldier_attack2_refire2 (edict_t *self)
 {
+	return;
 	if (self->s.skinnum < 2)
 		return;
 
@@ -633,6 +641,7 @@ mmove_t soldier_move_attack2 = {FRAME_attak201, FRAME_attak218, soldier_frames_a
 
 void soldier_duck_down (edict_t *self)
 {
+	return;
 	if (self->monsterinfo.aiflags & AI_DUCKED)
 		return;
 	self->monsterinfo.aiflags |= AI_DUCKED;
@@ -644,6 +653,7 @@ void soldier_duck_down (edict_t *self)
 
 void soldier_duck_up (edict_t *self)
 {
+	return;
 	self->monsterinfo.aiflags &= ~AI_DUCKED;
 	self->maxs[2] += 32;
 	self->takedamage = DAMAGE_AIM;
@@ -652,12 +662,14 @@ void soldier_duck_up (edict_t *self)
 
 void soldier_fire3 (edict_t *self)
 {
+	return;
 	soldier_duck_down (self);
 	soldier_fire (self, 2);
 }
 
 void soldier_attack3_refire (edict_t *self)
 {
+	return;
 	if ((level.time + 0.4) < self->monsterinfo.pausetime)
 		self->monsterinfo.nextframe = FRAME_attak303;
 }
@@ -680,6 +692,7 @@ mmove_t soldier_move_attack3 = {FRAME_attak301, FRAME_attak309, soldier_frames_a
 
 void soldier_fire4 (edict_t *self)
 {
+	return;
 	soldier_fire (self, 3);
 //
 //	if (self->enemy->health <= 0)
@@ -735,11 +748,13 @@ mmove_t soldier_move_attack5 = {FRAME_attak501, FRAME_attak508, soldier_frames_a
 
 void soldier_fire8 (edict_t *self)
 {
+	return;
 	soldier_fire (self, 7);
 }
 
 void soldier_attack6_refire (edict_t *self)
 {
+	return;
 	if (self->enemy->health <= 0)
 		return;
 
@@ -771,6 +786,7 @@ mmove_t soldier_move_attack6 = {FRAME_runs01, FRAME_runs14, soldier_frames_attac
 
 void soldier_attack(edict_t *self)
 {
+	return;
 	if (self->s.skinnum < 4)
 	{
 		if (random() < 0.5)
@@ -791,6 +807,7 @@ void soldier_attack(edict_t *self)
 
 void soldier_sight(edict_t *self, edict_t *other)
 {
+	return;
 	if (random() < 0.5)
 		gi.sound (self, CHAN_VOICE, sound_sight1, 1, ATTN_NORM, 0);
 	else
@@ -809,6 +826,7 @@ void soldier_sight(edict_t *self, edict_t *other)
 
 void soldier_duck_hold (edict_t *self)
 {
+	return;
 	if (level.time >= self->monsterinfo.pausetime)
 		self->monsterinfo.aiflags &= ~AI_HOLD_FRAME;
 	else
@@ -827,6 +845,7 @@ mmove_t soldier_move_duck = {FRAME_duck01, FRAME_duck05, soldier_frames_duck, so
 
 void soldier_dodge (edict_t *self, edict_t *attacker, float eta)
 {
+	return;
 	float	r;
 
 	r = random();
@@ -1252,8 +1271,8 @@ void SP_monster_soldier_light (edict_t *self)
 	gi.soundindex ("soldier/solatck2.wav");
 
 	self->s.skinnum = 0;
-	self->health = 20;
-	self->gib_health = -30;
+	self->health = 1;
+	self->gib_health = 0;
 }
 
 /*QUAKED monster_soldier (1 .5 0) (-16 -16 -24) (16 16 32) Ambush Trigger_Spawn Sight
@@ -1273,8 +1292,8 @@ void SP_monster_soldier (edict_t *self)
 	gi.soundindex ("soldier/solatck1.wav");
 
 	self->s.skinnum = 2;
-	self->health = 30;
-	self->gib_health = -30;
+	self->health = 1;
+	self->gib_health = 0;
 }
 
 /*QUAKED monster_soldier_ss (1 .5 0) (-16 -16 -24) (16 16 32) Ambush Trigger_Spawn Sight
@@ -1294,6 +1313,6 @@ void SP_monster_soldier_ss (edict_t *self)
 	gi.soundindex ("soldier/solatck3.wav");
 
 	self->s.skinnum = 4;
-	self->health = 40;
-	self->gib_health = -30;
+	self->health = 1;
+	self->gib_health = 0;
 }
