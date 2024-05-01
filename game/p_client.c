@@ -627,6 +627,8 @@ void InitClientPersistant (gclient_t *client)
 	client->pers.max_slugs		= 50;
 
 	client->pers.connected = true;
+
+	cookies = 0;
 }
 
 

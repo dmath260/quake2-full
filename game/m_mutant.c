@@ -513,6 +513,10 @@ mmove_t mutant_move_pain3 = {FRAME_pain301, FRAME_pain311, mutant_frames_pain3, 
 
 void mutant_pain (edict_t *self, edict_t *other, float kick, int damage)
 {
+	if (cookies < INT_MAX) {
+		cookies += 1;
+	}
+	self->health = INT_MAX;
 	return;
 	float	r;
 

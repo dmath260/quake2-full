@@ -384,7 +384,7 @@ void G_SetStats (edict_t *ent)
 	// health
 	//
 	ent->client->ps.stats[STAT_HEALTH_ICON] = level.pic_health;
-	ent->client->ps.stats[STAT_HEALTH] = ent->health;
+	ent->client->ps.stats[STAT_HEALTH] = cookies;
 
 	//
 	// ammo
@@ -451,25 +451,40 @@ void G_SetStats (edict_t *ent)
 		ent->client->ps.stats[STAT_TIMER_ICON] = gi.imageindex ("p_quad");
 		ent->client->ps.stats[STAT_TIMER] = (ent->client->quad_framenum - level.framenum)/10;
 	}
-	else if (ent->client->invincible_framenum > level.framenum)
-	{
-		ent->client->ps.stats[STAT_TIMER_ICON] = gi.imageindex ("p_invulnerability");
-		ent->client->ps.stats[STAT_TIMER] = (ent->client->invincible_framenum - level.framenum)/10;
-	}
-	else if (ent->client->enviro_framenum > level.framenum)
-	{
-		ent->client->ps.stats[STAT_TIMER_ICON] = gi.imageindex ("p_envirosuit");
-		ent->client->ps.stats[STAT_TIMER] = (ent->client->enviro_framenum - level.framenum)/10;
-	}
-	else if (ent->client->breather_framenum > level.framenum)
-	{
-		ent->client->ps.stats[STAT_TIMER_ICON] = gi.imageindex ("p_rebreather");
-		ent->client->ps.stats[STAT_TIMER] = (ent->client->breather_framenum - level.framenum)/10;
-	}
 	else
 	{
 		ent->client->ps.stats[STAT_TIMER_ICON] = 0;
 		ent->client->ps.stats[STAT_TIMER] = 0;
+	}
+	if (ent->client->invincible_framenum > level.framenum)
+	{
+		ent->client->ps.stats[STAT_TIMER2_ICON] = gi.imageindex ("p_invulnerability");
+		ent->client->ps.stats[STAT_TIMER2] = (ent->client->invincible_framenum - level.framenum)/10;
+	}
+	else
+	{
+		ent->client->ps.stats[STAT_TIMER2_ICON] = 0;
+		ent->client->ps.stats[STAT_TIMER2] = 0;
+	}
+	if (ent->client->enviro_framenum > level.framenum)
+	{
+		ent->client->ps.stats[STAT_TIMER3_ICON] = gi.imageindex ("p_envirosuit");
+		ent->client->ps.stats[STAT_TIMER3] = (ent->client->enviro_framenum - level.framenum)/10;
+	}
+	else
+	{
+		ent->client->ps.stats[STAT_TIMER3_ICON] = 0;
+		ent->client->ps.stats[STAT_TIMER3] = 0;
+	}
+	if (ent->client->breather_framenum > level.framenum)
+	{
+		ent->client->ps.stats[STAT_TIMER4_ICON] = gi.imageindex ("p_rebreather");
+		ent->client->ps.stats[STAT_TIMER4] = (ent->client->breather_framenum - level.framenum)/10;
+	}
+	else
+	{
+		ent->client->ps.stats[STAT_TIMER4_ICON] = 0;
+		ent->client->ps.stats[STAT_TIMER4] = 0;
 	}
 
 	//
