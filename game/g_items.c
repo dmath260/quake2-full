@@ -1285,7 +1285,7 @@ gitem_t	itemlist[] =
 	// WEAPONS 
 	//
 
-/* weapon_blaster (.3 .3 1) (-16 -16 -16) (16 16 16)
+/* 7. weapon_blaster (.3 .3 1) (-16 -16 -16) (16 16 16)
 always owned, never in the world
 */
 	{
@@ -1309,7 +1309,7 @@ always owned, never in the world
 /* precache */ "weapons/blastf1a.wav misc/lasfly.wav"
 	},
 
-/*QUAKED weapon_shotgun (.3 .3 1) (-16 -16 -16) (16 16 16)
+/* 8. QUAKED weapon_shotgun (.3 .3 1) (-16 -16 -16) (16 16 16)
 */
 	{
 		"weapon_shotgun", 
@@ -1332,7 +1332,7 @@ always owned, never in the world
 /* precache */ "weapons/shotgf1b.wav weapons/shotgr1b.wav"
 	},
 
-/*QUAKED weapon_supershotgun (.3 .3 1) (-16 -16 -16) (16 16 16)
+/* 9. QUAKED weapon_supershotgun (.3 .3 1) (-16 -16 -16) (16 16 16)
 */
 	{
 		"weapon_supershotgun", 
@@ -1355,7 +1355,7 @@ always owned, never in the world
 /* precache */ "weapons/sshotf1b.wav"
 	},
 
-/*QUAKED weapon_machinegun (.3 .3 1) (-16 -16 -16) (16 16 16)
+/* 10. QUAKED weapon_machinegun (.3 .3 1) (-16 -16 -16) (16 16 16)
 */
 	{
 		"weapon_machinegun", 
@@ -1378,7 +1378,7 @@ always owned, never in the world
 /* precache */ "weapons/machgf1b.wav weapons/machgf2b.wav weapons/machgf3b.wav weapons/machgf4b.wav weapons/machgf5b.wav"
 	},
 
-/*QUAKED weapon_chaingun (.3 .3 1) (-16 -16 -16) (16 16 16)
+/* 11. QUAKED weapon_chaingun (.3 .3 1) (-16 -16 -16) (16 16 16)
 */
 	{
 		"weapon_chaingun", 
@@ -1401,7 +1401,7 @@ always owned, never in the world
 /* precache */ "weapons/chngnu1a.wav weapons/chngnl1a.wav weapons/machgf3b.wav` weapons/chngnd1a.wav"
 	},
 
-/*QUAKED ammo_grenades (.3 .3 1) (-16 -16 -16) (16 16 16)
+/* 12. QUAKED ammo_grenades (.3 .3 1) (-16 -16 -16) (16 16 16)
 */
 	{
 		"ammo_grenades",
@@ -1424,7 +1424,7 @@ always owned, never in the world
 /* precache */ "weapons/hgrent1a.wav weapons/hgrena1b.wav weapons/hgrenc1b.wav weapons/hgrenb1a.wav weapons/hgrenb2a.wav "
 	},
 
-/*QUAKED weapon_grenadelauncher (.3 .3 1) (-16 -16 -16) (16 16 16)
+/* 13. QUAKED weapon_grenadelauncher (.3 .3 1) (-16 -16 -16) (16 16 16)
 */
 	{
 		"weapon_grenadelauncher",
@@ -1447,7 +1447,7 @@ always owned, never in the world
 /* precache */ "models/objects/grenade/tris.md2 weapons/grenlf1a.wav weapons/grenlr1b.wav weapons/grenlb1b.wav"
 	},
 
-/*QUAKED weapon_rocketlauncher (.3 .3 1) (-16 -16 -16) (16 16 16)
+/* 14. QUAKED weapon_rocketlauncher (.3 .3 1) (-16 -16 -16) (16 16 16)
 */
 	{
 		"weapon_rocketlauncher",
@@ -1470,7 +1470,7 @@ always owned, never in the world
 /* precache */ "models/objects/rocket/tris.md2 weapons/rockfly.wav weapons/rocklf1a.wav weapons/rocklr1b.wav models/objects/debris2/tris.md2"
 	},
 
-/*QUAKED weapon_hyperblaster (.3 .3 1) (-16 -16 -16) (16 16 16)
+/* 15. QUAKED weapon_hyperblaster (.3 .3 1) (-16 -16 -16) (16 16 16)
 */
 	{
 		"weapon_hyperblaster", 
@@ -1493,7 +1493,7 @@ always owned, never in the world
 /* precache */ "weapons/hyprbu1a.wav weapons/hyprbl1a.wav weapons/hyprbf1a.wav weapons/hyprbd1a.wav misc/lasfly.wav"
 	},
 
-/*QUAKED weapon_railgun (.3 .3 1) (-16 -16 -16) (16 16 16)
+/* 16. QUAKED weapon_railgun (.3 .3 1) (-16 -16 -16) (16 16 16)
 */
 	{
 		"weapon_railgun", 
@@ -1516,7 +1516,7 @@ always owned, never in the world
 /* precache */ "weapons/rg_hum.wav"
 	},
 
-/*QUAKED weapon_bfg (.3 .3 1) (-16 -16 -16) (16 16 16)
+/* 17. QUAKED weapon_bfg (.3 .3 1) (-16 -16 -16) (16 16 16)
 */
 	{
 		"weapon_bfg",

@@ -313,22 +313,79 @@ void HelpComputer (edict_t *ent)
 	else
 		sk = "hard+";
 
+	char buildingNames[6][8] = {"You", "Blaster", "Soldier", "Drone", "Robot", "Laser"};
+	char buildingDesc[6][97] = {"Navigate shop with [ and ].\nBuy buildings with n\nand upgrades with m.",
+	"Kills a Stroggo once\nevery 10 seconds.", "A tough soldier to\nkill more Stroggos.", 
+	"Kills Stroggos\nquite efficiently.", "Kills large quantities\nof Stroggos.",
+	"Butchers Stroggos with\nterrifying efficiency."};
+	char splash[13][80] = {"You feel like killing\nStroggos. But nobody wants\nto kill them with you.",
+	"Your friends agree to try\nkilling Stroggos with you.",
+	"Killing Stroggos is a\npopular activity in\nthe neighborhood.",
+	"People are starting to talk\nabout killing Stroggos.",
+	"People are killing Stroggos\nfor miles around.",
+	"Killing Stroggos is now\ntrending online!",
+	"Killing Stroggos is a\npopular pastime in\ndistant countries",
+	"People come from very\nfar away to kill Stroggos.",
+	"A national day has been\ncreated in honor of\nkilling Stroggos.",
+	"History books now include\na whole chapter on\nkilling Stroggos.",
+	"The whole planet is\nenjoying killing Stroggos!",
+	"it's time to stop playing",
+	"A local news station runs\na 10-minute segment on\nkilling Stroggos. Success!"};
+	int building = ent->client->pers.selected_item;
+	if (building < 7 || building > 13 || building == 12) {
+		return;
+	} else if (building == 13) {
+		building = 5;
+	} else {
+		building -= 7;
+	}
+	int i;
+	if (lifetimeCookies >= 0 && lifetimeCookies < 5) {
+		i = 0;
+	} else if (lifetimeCookies < 25) {
+		i = 1;
+	} else if (lifetimeCookies < 50) {
+		i = 2;
+	} else if (lifetimeCookies < 100) {
+		i = 3;
+	} else if (lifetimeCookies < 200) {
+		i = 4;
+	} else if (lifetimeCookies < 500) {
+		i = 5;
+	} else if (lifetimeCookies < 1000) {
+		i = 6;
+	} else if (lifetimeCookies < 2000) {
+		i = 7;
+	} else if (lifetimeCookies < 5000) {
+		i = 8;
+	} else if (lifetimeCookies < 10000) {
+		i = 9;
+	} else if (lifetimeCookies < 25000) {
+		i = 10;
+	} else if (lifetimeCookies < 32767) {
+		i = 11;
+	} else {
+		i = 12;
+	}
+	float cpsf = cps[building];
+
+
 	// send the layout
 	Com_sprintf (string, sizeof(string),
-		"xv 32 yv 8 picn help "			// background
-		"xv 202 yv 12 string2 \"%s\" "		// skill
+		"xv 32 yv 8 picn help "				// background
+		"xv 202 yv 12 string2 \"%.1f kps\" "// skill
 		"xv 0 yv 24 cstring2 \"%s\" "		// level name
 		"xv 0 yv 54 cstring2 \"%s\" "		// help 1
 		"xv 0 yv 110 cstring2 \"%s\" "		// help 2
-		"xv 50 yv 164 string2 \" kills     goals    secrets\" "
-		"xv 50 yv 172 string2 \"%3i/%3i     %i/%i       %i/%i\" ", 
-		sk,
-		level.level_name,
-		game.helpmessage1,
-		game.helpmessage2,
-		level.killed_monsters, level.total_monsters, 
-		level.found_goals, level.total_goals,
-		level.found_secrets, level.total_secrets);
+		"xv 50 yv 164 string2 \"# owned    level     kills \" "
+		"xv 50 yv 172 string2 \"  %3i       %i/7        %i \" ", 
+		cpsf / 10,
+		buildingNames[building],
+		buildingDesc[building],
+		splash[i],
+		buildings[building],
+		upgrades[building] + 1,
+		lifetimeCookiesPerBuilding[building]);
 
 	gi.WriteByte (svc_layout);
 	gi.WriteString (string);
@@ -494,6 +551,17 @@ void G_SetStats (edict_t *ent)
 		ent->client->ps.stats[STAT_SELECTED_ICON] = 0;
 	else
 		ent->client->ps.stats[STAT_SELECTED_ICON] = gi.imageindex (itemlist[ent->client->pers.selected_item].icon);
+
+	ent->client->ps.stats[STAT_SELECTED_ITEM] = ent->client->pers.selected_item;
+
+	//
+	// selected item
+	//
+	ent->client->ps.stats[STAT_BUILDING1] = buildings[1];
+	ent->client->ps.stats[STAT_BUILDING2] = buildings[2];
+	ent->client->ps.stats[STAT_BUILDING3] = buildings[3];
+	ent->client->ps.stats[STAT_BUILDING4] = buildings[4];
+	ent->client->ps.stats[STAT_BUILDING5] = buildings[5];
 
 	ent->client->ps.stats[STAT_SELECTED_ITEM] = ent->client->pers.selected_item;
 

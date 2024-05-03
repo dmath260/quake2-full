@@ -1014,6 +1014,11 @@ typedef enum
 #define	STAT_TIMER3				21
 #define	STAT_TIMER4_ICON		22
 #define	STAT_TIMER4				23
+#define	STAT_BUILDING1			24
+#define	STAT_BUILDING2			25
+#define	STAT_BUILDING3			26
+#define	STAT_BUILDING4			27
+#define	STAT_BUILDING5			28
 
 #define	MAX_STATS				32
 

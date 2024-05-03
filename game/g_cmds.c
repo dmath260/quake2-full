@@ -945,6 +945,91 @@ void Cmd_PlayerList_f(edict_t *ent)
 	gi.cprintf(ent, PRINT_HIGH, "%s", text);
 }
 
+static void Cmd_BuyBuilding_f(edict_t *ent) {
+	if (!ent->client) {
+		return;
+	}
+	char buildingNames[6][8] = { "", "blaster", "soldier", "drone", "robot", "laser" };
+	int building = ent->client->pers.selected_item;
+	if (building < 8 || building > 13 || building == 12) {
+		return;
+	}
+	else if (building == 13) {
+		building = 5;
+	}
+	else {
+		building -= 7;
+	}
+	if (cookies >= buildingPrices[building]) {
+		buildings[building] += 1;
+		buildings[0] += 1;
+		cookies -= buildingPrices[building];
+		if (buildingPrices[building] > 28493) {
+			buildingPrices[building] = 32767;
+		} else {
+			buildingPrices[building] = ceil(1.15 * buildingPrices[building]);
+		}
+		gi.bprintf(PRINT_HIGH, "Bought one %s\n", buildingNames[building]);
+		cps[building] = buildingMultipliers[building] * buildings[building] * pow(2, upgrades[building]);
+		cps[0] = cps[1] + cps[2] + cps[3] + cps[4] + cps[5];
+	} else {
+		gi.bprintf(PRINT_HIGH, "Cannot afford %s\n", buildingNames[building]);
+	}
+}
+
+static void Cmd_BuyUpgrade_f(edict_t* ent) {
+	if (!ent->client) {
+		return;
+	}
+	char buildingNames[6][16] = { "your blaster", "blasters", "soldiers", "drones", "robots", "lasers" };
+	int building = ent->client->pers.selected_item;
+	if (building < 7 || building > 13 || building == 12) {
+		return;
+	}
+	else if (building == 13) {
+		building = 5;
+	}
+	else {
+		building -= 7;
+	}
+	if (upgrades[building] < 6 && cookies >= upgradePrices[building]) {
+		upgrades[building] += 1;
+		cookies -= upgradePrices[building];
+		upgradePrices[building] = ceil(upgradePrices[building] * upgradePriceMod[building]);
+		gi.bprintf(PRINT_HIGH, "Upgraded %s to level %i\n", buildingNames[building], (upgrades[building] + 1));
+		cps[building] = 10 * buildingMultipliers[building] * buildings[building] * pow(2, upgrades[building]);
+		cps[0] = cps[1] + cps[2] + cps[3] + cps[4] + cps[5];
+		return;
+	} else if (upgrades[building] == 6) {
+		gi.bprintf(PRINT_HIGH, "Cannot upgrade %s any further\n", buildingNames[building]);
+	} else {
+		gi.bprintf(PRINT_HIGH, "Cannot afford upgrade for %s\n", buildingNames[building]);
+	}
+}
+
+static void Cmd_RuinTheFun_f(edict_t* ent) {
+	if (!ent->client) {
+		return;
+	}
+
+	gi.bprintf(PRINT_HIGH, "You feel a bitter taste in your mouth...\n");
+	gi.bprintf(PRINT_HIGH, "Thou doth ruineth the fun!\n");
+	gi.bprintf(PRINT_HIGH, "You're free. Free at last.\n");
+
+	gitem_t* it;
+	int			i;
+
+	for (i = 8; i < 14; i++) {
+		it = itemlist + i;
+		if (i != 12) {
+			ent->client->pers.inventory[i] += 1;
+		}
+	}
+
+	cookies = 32767;
+	lifetimeCookies = 32767;
+}
+
 
 /*
 =================
@@ -1032,9 +1117,15 @@ void ClientCommand (edict_t *ent)
 	else if (Q_stricmp (cmd, "wave") == 0)
 		Cmd_Wave_f (ent);
 	else if (Q_stricmp(cmd, "playerlist") == 0)
-		Cmd_PlayerList_f(ent);
+		Cmd_PlayerList_f (ent);
 	else if (Q_stricmp(cmd, "spawnentity") == 0)
-		Cmd_SpawnEntity_f(ent);
+		Cmd_SpawnEntity_f (ent);
+	else if (Q_stricmp(cmd, "buybuilding") == 0)
+		Cmd_BuyBuilding_f (ent);
+	else if (Q_stricmp(cmd, "buyupgrade") == 0)
+		Cmd_BuyUpgrade_f(ent);
+	else if (Q_stricmp(cmd, "ruinthefun") == 0)
+		Cmd_RuinTheFun_f(ent);
 	else	// anything that doesn't match a command will be a chat
 		Cmd_Say_f (ent, false, true);
 }

@@ -629,6 +629,36 @@ void InitClientPersistant (gclient_t *client)
 	client->pers.connected = true;
 
 	cookies = 0;
+	lifetimeCookies = 0;
+	buildingPrices[1] = 15;
+	buildingPrices[2] = 50;
+	buildingPrices[3] = 275;
+	buildingPrices[4] = 1500;
+	buildingPrices[5] = 8125;
+	buildingMultipliers[1] = 1;
+	buildingMultipliers[2] = 5;
+	buildingMultipliers[3] = 20;
+	buildingMultipliers[4] = 58.75;
+	buildingMultipliers[5] = 162.5;
+	timeUntilCps = 40;
+	upgradePrices[0] = 1000;
+	upgradePrices[1] = 45;
+	upgradePrices[2] = 125;
+	upgradePrices[3] = 550;
+	upgradePrices[4] = 2400;
+	upgradePrices[5] = 10157;
+	upgradePriceMod[0] = 2.0;
+	upgradePriceMod[1] = 3.0;
+	upgradePriceMod[2] = 2.5;
+	upgradePriceMod[3] = 2.0;
+	upgradePriceMod[4] = 1.6;
+	upgradePriceMod[5] = 1.25;
+	lifetimeCookiesPerBuilding[0] = 0;
+	lifetimeCookiesPerBuilding[1] = 0;
+	lifetimeCookiesPerBuilding[2] = 0;
+	lifetimeCookiesPerBuilding[3] = 0;
+	lifetimeCookiesPerBuilding[4] = 0;
+	lifetimeCookiesPerBuilding[5] = 0;
 }
 
 
@@ -1571,6 +1601,65 @@ usually be a couple times for each server frame.
 */
 void ClientThink (edict_t *ent, usercmd_t *ucmd)
 {
+	timeUntilCps -= 1;
+	if (timeUntilCps == 0) {
+		timeUntilCps = 40;
+		if (cookies > 32767 - ceil(cps[0] / 10)) {
+			cookies = 32767;
+		} else {
+			if (cps[0] % 10 != 0) {
+				dCookies[0] += cps[0] % 10;
+				if (dCookies[0] >= 10) {
+					if (lifetimeCookies != 32767) {
+						lifetimeCookies += 1;
+					}
+					cookies += 1;
+					dCookies[0] -= 10;
+				}
+			}
+			cookies += floor(cps[0] / 10);
+			if (lifetimeCookies != 32767 && lifetimeCookies > 32767 - floor(cps[0] / 10)) {
+				lifetimeCookies = 32767;
+			}
+			for (int i = 1; i < 6; i++) {
+				if (lifetimeCookiesPerBuilding[i] < 32767 - ceil(cps[i] / 10)) {
+					lifetimeCookiesPerBuilding[i] += floor(cps[i] / 10);
+					dCookies[i] += cps[i] % 10;
+					if (dCookies[i] >= 10) {
+						if (lifetimeCookiesPerBuilding[i] != 32767) {
+							lifetimeCookiesPerBuilding[i] += 1;
+						}
+						dCookies[i] -= 10;
+					}
+				}
+				else {
+					lifetimeCookiesPerBuilding[i] = 32767;
+				}
+			}
+		}
+	}
+
+	if (ent->client->pers.inventory[8] != 1 && lifetimeCookies >= 15) {
+		ent->client->pers.inventory[8] = 1;
+		gi.bprintf(PRINT_HIGH, "Unlocked blasters\n");
+	}
+	if (ent->client->pers.inventory[9] != 1 && lifetimeCookies >= 50) {
+		ent->client->pers.inventory[9] = 1;
+		gi.bprintf(PRINT_HIGH, "Unlocked soldiers\n");
+	}
+	if (ent->client->pers.inventory[10] != 1 && lifetimeCookies >= 275) {
+		ent->client->pers.inventory[10] = 1;
+		gi.bprintf(PRINT_HIGH, "Unlocked drones\n");
+	}
+	if (ent->client->pers.inventory[11] != 1 && lifetimeCookies >= 1500) {
+		ent->client->pers.inventory[11] = 1;
+		gi.bprintf(PRINT_HIGH, "Unlocked robots\n");
+	}
+	if (ent->client->pers.inventory[13] != 1 && lifetimeCookies >= 8125) {
+		ent->client->pers.inventory[13] = 1;
+		gi.bprintf(PRINT_HIGH, "Unlocked lasers\n");
+	}
+
 	gclient_t	*client;
 	edict_t	*other;
 	int		i, j;

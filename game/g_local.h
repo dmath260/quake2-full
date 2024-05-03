@@ -1112,3 +1112,14 @@ struct edict_s
 };
 
 int cookies;
+int lifetimeCookies;
+int buildings[6];
+int upgrades[6];
+int buildingPrices[6];
+int upgradePrices[6];
+int lifetimeCookiesPerBuilding[6];
+int cps[6];
+float buildingMultipliers[6];
+int timeUntilCps;
+int dCookies[6];
+float upgradePriceMod[6];

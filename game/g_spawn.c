@@ -646,9 +646,9 @@ void SpawnEntities (char *mapname, char *entities, char *spawnpoint)
 #endif
 
 char *single_statusbar = 
-"yv	15 "
+"yb	-400 "
 
-// health
+// cookies
 "xr	-100 "
 "num 10 1 "
 

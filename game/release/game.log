@@ -1,97 +1,22 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  m_mutant.c
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(63,44): warning C4100: 'other': unreferenced formal parameter
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(319,85): warning C4100: 'surf': unreferenced formal parameter
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(319,66): warning C4100: 'plane': unreferenced formal parameter
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(416,2): warning C4033: 'mutant_check_melee' must return a value
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(424,2): warning C4033: 'mutant_check_jump' must return a value
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(452,2): warning C4033: 'mutant_checkattack' must return a value
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(514,66): warning C4100: 'damage': unreferenced formal parameter
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(514,56): warning C4100: 'kick': unreferenced formal parameter
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(514,43): warning C4100: 'other': unreferenced formal parameter
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(598,91): warning C4100: 'point': unreferenced formal parameter
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(598,62): warning C4100: 'attacker': unreferenced formal parameter
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(598,42): warning C4100: 'inflictor': unreferenced formal parameter
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(66,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(72,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(54,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(78,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(56,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(57,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(58,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(60,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(229,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(214,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(251,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(267,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(269,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(271,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(252,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(254,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(279,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(281,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(283,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(311,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(289,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(292,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(293,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(406,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(322,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(376,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(417,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(324,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(428,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(378,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(523,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(418,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(328,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(560,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(429,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(384,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(524,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(419,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(330,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(431,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(385,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(526,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(420,1): warning C4715: 'mutant_check_melee': not all control paths return a value
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(336,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(387,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(432,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(529,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(344,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(434,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(534,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(603,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(346,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(440,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(537,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(605,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(348,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(441,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(540,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(606,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(354,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(443,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(542,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(607,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(444,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(608,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(547,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(447,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(609,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(448,1): warning C4715: 'mutant_check_jump': not all control paths return a value
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(610,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(615,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(618,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(624,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(626,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(362,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(453,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(454,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(458,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(464,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(469,1): warning C4702: unreachable code
-C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\m_mutant.c(470,1): warning C4715: 'mutant_checkattack': not all control paths return a value
+  g_cmds.c
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(34,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(57,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(58,2): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(722,4): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(725,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(808,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(809,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(810,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(821,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(828,2): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(915,2): warning C4013: 'ED_CallSpawn' undefined; assuming extern returning int
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(921,7): warning C4459: declaration of 'st' hides global declaration
+  C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_local.h(456,21):
+  see declaration of 'st'
+  
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(943,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(931,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(939,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
      Creating library .\..\release\gamex86.lib and object .\..\release\gamex86.exp
   game.vcxproj -> C:\Program Files (x86)\Steam\steamapps\common\Quake 2\stroggoclicker\gamex86.dll
