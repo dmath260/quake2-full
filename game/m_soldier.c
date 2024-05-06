@@ -1164,6 +1164,151 @@ void soldier_die (edict_t *self, edict_t *inflictor, edict_t *attacker, int dama
 {
 	int		n;
 
+	n = rand() % 5;
+	gitem_t* it;
+	int index;
+	if (n == 0) {
+		gi.bprintf(PRINT_HIGH, "Frenzy: Strogg killing efficiency x7 for 30 seconds!\n");
+		it = FindItem("Quad Damage");
+		index = ITEM_INDEX(it);
+		attacker->client->pers.inventory[index] += it->quantity;
+		it->use(attacker, it);
+		qboolean overload = false;
+		frenzy = 7;
+		bonus = frenzy * bSpecial;
+		for (int i = 1; i < 6; i++) {
+			if (32767 / bonus < buildingMultipliers[i] * buildings[i] * pow(2, upgrades[i])) {
+				cps[i] = 32767;
+				overload = true;
+			}
+			else {
+				cps[i] = bonus * buildingMultipliers[i] * buildings[i] * pow(2, upgrades[i]);
+			}
+		}
+		if (overload || 32767 - cps[1] - cps[2] - cps[3] - cps[4] - cps[5] < 0) {
+			cps[0] = 32767;
+		}
+		else {
+			cps[0] = cps[1] + cps[2] + cps[3] + cps[4] + cps[5];
+		}
+	}
+	else if (n == 1) {
+		if (32767 - 6 * cps[0] + 13 > cookies) {
+			cookies += 6 * cps[0] + 13;
+			if (32767 - 6 * cps[0] + 13 > lifetimeCookies) {
+				lifetimeCookies += 6 * cps[0] + 13;
+			}
+			gi.bprintf(PRINT_HIGH, "Lucky: %i free kills!\n", 6 * cps[0] + 13);
+		}
+		else {
+			cookies = 32767;
+			lifetimeCookies = 32767;
+			gi.bprintf(PRINT_HIGH, "Lucky: 32767 free kills!\n");
+		}
+	}
+	else if (n == 2) {
+		gi.bprintf(PRINT_HIGH, "Click Frenzy: Your blaster's power x7 for 13 seconds!\n");
+		cBonus = 7;
+		it = FindItem("Invulnerability");
+		index = ITEM_INDEX(it);
+		attacker->client->pers.inventory[index] += it->quantity;
+		it->use(attacker, it);
+	}
+	else if (n == 3) {
+		n = rand() % 5;
+		it = FindItem("Rebreather");
+		if (n == 0 && buildings[1] != 0) {
+			gi.bprintf(PRINT_HIGH, "Pew Pew: Your %i blasters are boosting your killing efficiency! Strogg killing efficiency +%i%% for 15 seconds!\n", buildings[1], buildings[1] * 10);
+			bSpecial = 1.0 + buildings[1] / 10.0;
+		}
+		else if (n == 1 && buildings[2] != 0) {
+			gi.bprintf(PRINT_HIGH, "Rally the Troops: Your %i soldiers are boosting your killing efficiency! Strogg killing efficiency +%i%% for 15 seconds!\n", buildings[2], buildings[2] * 10);
+			bSpecial = 1.0 + buildings[2] / 10.0;
+		}
+		else if (n == 2 && buildings[3] != 0) {
+			gi.bprintf(PRINT_HIGH, "Initating Strike: Your %i drones are boosting your killing efficiency! Strogg killing efficiency +%i%% for 15 seconds!\n", buildings[3], buildings[3] * 10);
+			bSpecial = 1.0 + buildings[3] / 10.0;
+		}
+		else if (n == 3 && buildings[4] != 0) {
+			gi.bprintf(PRINT_HIGH, "Robot Apocalypse: Your %i robots are boosting your killing efficiency! Strogg killing efficiency +%i%% for 15 seconds!\n", buildings[4], buildings[4] * 10);
+			bSpecial = 1.0 + buildings[4] / 10.0;
+		}
+		else if (n == 4 && buildings[5] != 0) {
+			gi.bprintf(PRINT_HIGH, "Hyper Beam: Your %i lasers are boosting your killing efficiency! Strogg killing efficiency +%i%% for 15 seconds!\n", buildings[5], buildings[5] * 10);
+			bSpecial = 1.0 + buildings[5] / 10.0;
+		}
+		else {
+			gi.bprintf(PRINT_HIGH, "Frenzy: Strogg killing efficiency x7 for 30 seconds!\n");
+			it = FindItem("Quad Damage");
+			frenzy = 7;
+		}
+		index = ITEM_INDEX(it);
+		attacker->client->pers.inventory[index] += it->quantity;
+		it->use(attacker, it);
+		qboolean overload = false;
+		bonus = frenzy * bSpecial;
+		for (int i = 1; i < 6; i++) {
+			if (32767 / bonus < buildingMultipliers[i] * buildings[i] * pow(2, upgrades[i])) {
+				cps[i] = 32767;
+				overload = true;
+			}
+			else {
+				cps[i] = bonus * buildingMultipliers[i] * buildings[i] * pow(2, upgrades[i]);
+			}
+		}
+		if (overload || 32767 - cps[1] - cps[2] - cps[3] - cps[4] - cps[5] < 0) {
+			cps[0] = 32767;
+		}
+		else {
+			cps[0] = cps[1] + cps[2] + cps[3] + cps[4] + cps[5];
+		}
+	}
+	else {
+		buildings[0] += 1;
+		n = rand() % 5;
+		if (n == 0 && buildings[1] != 0) {
+			gi.bprintf(PRINT_HIGH, "Arsenal Upgrade: Free Blaster!\n");
+			buildings[1] += 1;
+			cps[1] = bonus * buildingMultipliers[1] * buildings[1] * pow(2, upgrades[1]);
+		}
+		else if (n == 1 && buildings[2] != 0) {
+			gi.bprintf(PRINT_HIGH, "Selective Service: Free Soldier!\n");
+			buildings[2] += 1;
+			cps[2] = bonus * buildingMultipliers[2] * buildings[2] * pow(2, upgrades[2]);
+		}
+		else if (n == 2 && buildings[3] != 0) {
+			gi.bprintf(PRINT_HIGH, "Covert Operations: Free Drone!\n");
+			buildings[3] += 1;
+			cps[3] = bonus * buildingMultipliers[3] * buildings[3] * pow(2, upgrades[3]);
+		}
+		else if (n == 3 && buildings[4] != 0) {
+			gi.bprintf(PRINT_HIGH, "Assembly Line: Free Robot!\n");
+			buildings[4] += 1;
+			cps[4] = bonus * buildingMultipliers[4] * buildings[4] * pow(2, upgrades[4]);
+		}
+		else if (n == 4 && buildings[5] != 0) {
+			gi.bprintf(PRINT_HIGH, "Beam Me Up: Free Laser!\n", buildings[5], buildings[5] * 10);
+			buildings[5] += 1;
+			cps[5] = bonus * buildingMultipliers[5] * buildings[5] * pow(2, upgrades[5]);
+		}
+		else {
+			buildings[0] -= 1;
+			if (32767 - 6 * cps[0] + 13 > cookies) {
+				cookies += 6 * cps[0] + 13;
+				if (32767 - 6 * cps[0] + 13 > lifetimeCookies) {
+					lifetimeCookies += 6 * cps[0] + 13;
+				}
+				gi.bprintf(PRINT_HIGH, "Lucky: %i free kills!\n", 6 * cps[0] + 13);
+			}
+			else {
+				cookies = 32767;
+				lifetimeCookies = 32767;
+				gi.bprintf(PRINT_HIGH, "Lucky: 32767 free kills!\n");
+			}
+		}
+		cps[0] = cps[1] + cps[2] + cps[3] + cps[4] + cps[5];
+	}
+
 // check for gib
 	if (self->health <= self->gib_health)
 	{
@@ -1197,18 +1342,6 @@ void soldier_die (edict_t *self, edict_t *inflictor, edict_t *attacker, int dama
 		self->monsterinfo.currentmove = &soldier_move_death3;
 		return;
 	}
-
-	n = rand() % 5;
-	if (n == 0)
-		self->monsterinfo.currentmove = &soldier_move_death1;
-	else if (n == 1)
-		self->monsterinfo.currentmove = &soldier_move_death2;
-	else if (n == 2)
-		self->monsterinfo.currentmove = &soldier_move_death4;
-	else if (n == 3)
-		self->monsterinfo.currentmove = &soldier_move_death5;
-	else
-		self->monsterinfo.currentmove = &soldier_move_death6;
 }
 
 

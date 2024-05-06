@@ -513,11 +513,11 @@ mmove_t mutant_move_pain3 = {FRAME_pain301, FRAME_pain311, mutant_frames_pain3, 
 
 void mutant_pain (edict_t *self, edict_t *other, float kick, int damage)
 {
-	if (cookies < 32767 - pow(2, upgrades[0])) {
-		cookies += pow(2, upgrades[0]);
-		if (lifetimeCookies < 32767 - pow(2, upgrades[0])) {
-			lifetimeCookies += pow(2, upgrades[0]);
-			lifetimeCookiesPerBuilding[0] += pow(2, upgrades[0]);
+	if (cookies < 32767 - cBonus * pow(2, upgrades[0])) {
+		cookies += cBonus * pow(2, upgrades[0]);
+		if (lifetimeCookies < 32767 - cBonus * pow(2, upgrades[0])) {
+			lifetimeCookies += cBonus * pow(2, upgrades[0]);
+			lifetimeCookiesPerBuilding[0] += cBonus * pow(2, upgrades[0]);
 		}
 	} else if (cookies != 32767) {
 		cookies = 32767;

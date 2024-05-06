@@ -952,6 +952,7 @@ static void Cmd_BuyBuilding_f(edict_t *ent) {
 	char buildingNames[6][8] = { "", "blaster", "soldier", "drone", "robot", "laser" };
 	int building = ent->client->pers.selected_item;
 	if (building < 8 || building > 13 || building == 12) {
+		gi.bprintf(PRINT_HIGH, "Cannot buy this item.\n");
 		return;
 	}
 	else if (building == 13) {
@@ -969,11 +970,12 @@ static void Cmd_BuyBuilding_f(edict_t *ent) {
 		} else {
 			buildingPrices[building] = ceil(1.15 * buildingPrices[building]);
 		}
-		gi.bprintf(PRINT_HIGH, "Bought one %s\n", buildingNames[building]);
-		cps[building] = buildingMultipliers[building] * buildings[building] * pow(2, upgrades[building]);
+		gi.bprintf(PRINT_HIGH, "Bought one %s. You now have %i.\n", buildingNames[building], buildings[building]);
+		cps[building] = bonus * buildingMultipliers[building] * buildings[building] * pow(2, upgrades[building]);
 		cps[0] = cps[1] + cps[2] + cps[3] + cps[4] + cps[5];
 	} else {
-		gi.bprintf(PRINT_HIGH, "Cannot afford %s\n", buildingNames[building]);
+		gi.bprintf(PRINT_HIGH, "Cannot afford %s. You need %i more kills (%i total).\n",
+			buildingNames[building], buildingPrices[building] - cookies, buildingPrices[building]);
 	}
 }
 
@@ -984,6 +986,7 @@ static void Cmd_BuyUpgrade_f(edict_t* ent) {
 	char buildingNames[6][16] = { "your blaster", "blasters", "soldiers", "drones", "robots", "lasers" };
 	int building = ent->client->pers.selected_item;
 	if (building < 7 || building > 13 || building == 12) {
+		gi.bprintf(PRINT_HIGH, "Cannot upgrade this item.\n");
 		return;
 	}
 	else if (building == 13) {
@@ -996,14 +999,15 @@ static void Cmd_BuyUpgrade_f(edict_t* ent) {
 		upgrades[building] += 1;
 		cookies -= upgradePrices[building];
 		upgradePrices[building] = ceil(upgradePrices[building] * upgradePriceMod[building]);
-		gi.bprintf(PRINT_HIGH, "Upgraded %s to level %i\n", buildingNames[building], (upgrades[building] + 1));
-		cps[building] = 10 * buildingMultipliers[building] * buildings[building] * pow(2, upgrades[building]);
+		gi.bprintf(PRINT_HIGH, "Upgraded %s to level %i.\n", buildingNames[building], (upgrades[building] + 1));
+		cps[building] = bonus * buildingMultipliers[building] * buildings[building] * pow(2, upgrades[building]);
 		cps[0] = cps[1] + cps[2] + cps[3] + cps[4] + cps[5];
 		return;
 	} else if (upgrades[building] == 6) {
-		gi.bprintf(PRINT_HIGH, "Cannot upgrade %s any further\n", buildingNames[building]);
+		gi.bprintf(PRINT_HIGH, "Cannot upgrade %s any further.\n", buildingNames[building]);
 	} else {
-		gi.bprintf(PRINT_HIGH, "Cannot afford upgrade for %s\n", buildingNames[building]);
+		gi.bprintf(PRINT_HIGH, "Cannot afford upgrade for %s. You need %i more kills (%i total).\n",
+			buildingNames[building], upgradePrices[building] - cookies, upgradePrices[building]);
 	}
 }
 

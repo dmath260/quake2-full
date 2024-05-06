@@ -18,5 +18,20 @@ C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c
 C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(943,3): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(931,3): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\g_cmds.c(939,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  p_client.c
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(70,42): warning C4100: 'self': unreferenced formal parameter
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(179,66): warning C4100: 'damage': unreferenced formal parameter
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(179,56): warning C4100: 'kick': unreferenced formal parameter
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(179,43): warning C4100: 'other': unreferenced formal parameter
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(179,28): warning C4100: 'self': unreferenced formal parameter
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(211,46): warning C4100: 'inflictor': unreferenced formal parameter
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(501,91): warning C4100: 'point': unreferenced formal parameter
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(967,89): warning C4100: 'point': unreferenced formal parameter
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(967,60): warning C4100: 'attacker': unreferenced formal parameter
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(967,40): warning C4100: 'inflictor': unreferenced formal parameter
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(1406,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(1411,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\escdr\OneDrive - NJIT\Documents\GitHub\Quake-2-Source-SDK\game\p_client.c(1451,2): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating Code...
      Creating library .\..\release\gamex86.lib and object .\..\release\gamex86.exp
   game.vcxproj -> C:\Program Files (x86)\Steam\steamapps\common\Quake 2\stroggoclicker\gamex86.dll

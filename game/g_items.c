@@ -369,9 +369,9 @@ void Use_Breather (edict_t *ent, gitem_t *item)
 	ValidateSelectedItem (ent);
 
 	if (ent->client->breather_framenum > level.framenum)
-		ent->client->breather_framenum += 300;
+		ent->client->breather_framenum += 150;
 	else
-		ent->client->breather_framenum = level.framenum + 300;
+		ent->client->breather_framenum = level.framenum + 150;
 
 //	gi.sound(ent, CHAN_ITEM, gi.soundindex("items/damage.wav"), 1, ATTN_NORM, 0);
 }
@@ -399,9 +399,9 @@ void	Use_Invulnerability (edict_t *ent, gitem_t *item)
 	ValidateSelectedItem (ent);
 
 	if (ent->client->invincible_framenum > level.framenum)
-		ent->client->invincible_framenum += 300;
+		ent->client->invincible_framenum += 130;
 	else
-		ent->client->invincible_framenum = level.framenum + 300;
+		ent->client->invincible_framenum = level.framenum + 130;
 
 	gi.sound(ent, CHAN_ITEM, gi.soundindex("items/protect.wav"), 1, ATTN_NORM, 0);
 }

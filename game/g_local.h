@@ -1123,3 +1123,7 @@ float buildingMultipliers[6];
 int timeUntilCps;
 int dCookies[6];
 float upgradePriceMod[6];
+float bonus;
+int frenzy;
+float bSpecial;
+int cBonus;

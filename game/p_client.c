@@ -640,7 +640,7 @@ void InitClientPersistant (gclient_t *client)
 	buildingMultipliers[3] = 20;
 	buildingMultipliers[4] = 58.75;
 	buildingMultipliers[5] = 162.5;
-	timeUntilCps = 40;
+	timeUntilCps = 45;
 	upgradePrices[0] = 1000;
 	upgradePrices[1] = 45;
 	upgradePrices[2] = 125;
@@ -659,6 +659,10 @@ void InitClientPersistant (gclient_t *client)
 	lifetimeCookiesPerBuilding[3] = 0;
 	lifetimeCookiesPerBuilding[4] = 0;
 	lifetimeCookiesPerBuilding[5] = 0;
+	bonus = 1.0;
+	frenzy = 1;
+	bSpecial = 1.0;
+	cBonus = 1;
 }
 
 
@@ -1601,9 +1605,39 @@ usually be a couple times for each server frame.
 */
 void ClientThink (edict_t *ent, usercmd_t *ucmd)
 {
+
+	if (ent->client->invincible_framenum == level.framenum) {
+		cBonus = 1;
+	}
+	if (ent->client->quad_framenum == level.framenum || ent->client->breather_framenum == level.framenum ) {
+		if (ent->client->quad_framenum == level.framenum) {
+			frenzy = 1;
+		}
+		if (ent->client->breather_framenum == level.framenum) {
+			bSpecial = 1;
+		}
+		bonus = frenzy * bSpecial;
+		qboolean overload = false;
+		for (int i = 1; i < 6; i++) {
+			if (32767 / bonus < buildingMultipliers[i] * buildings[i] * pow(2, upgrades[i])) {
+				cps[i] = 32767;
+				overload = true;
+			}
+			else {
+				cps[i] = bonus * buildingMultipliers[i] * buildings[i] * pow(2, upgrades[i]);
+			}
+		}
+		if (overload || 32767 - cps[1] - cps[2] - cps[3] - cps[4] - cps[5] < 0) {
+			cps[0] = 32767;
+		}
+		else {
+			cps[0] = cps[1] + cps[2] + cps[3] + cps[4] + cps[5];
+		}
+	}
+
 	timeUntilCps -= 1;
 	if (timeUntilCps == 0) {
-		timeUntilCps = 40;
+		timeUntilCps = 45;
 		if (cookies > 32767 - ceil(cps[0] / 10)) {
 			cookies = 32767;
 		} else {
@@ -1641,23 +1675,23 @@ void ClientThink (edict_t *ent, usercmd_t *ucmd)
 
 	if (ent->client->pers.inventory[8] != 1 && lifetimeCookies >= 15) {
 		ent->client->pers.inventory[8] = 1;
-		gi.bprintf(PRINT_HIGH, "Unlocked blasters\n");
+		gi.bprintf(PRINT_HIGH, "Unlocked blasters.\n");
 	}
 	if (ent->client->pers.inventory[9] != 1 && lifetimeCookies >= 50) {
 		ent->client->pers.inventory[9] = 1;
-		gi.bprintf(PRINT_HIGH, "Unlocked soldiers\n");
+		gi.bprintf(PRINT_HIGH, "Unlocked soldiers.\n");
 	}
 	if (ent->client->pers.inventory[10] != 1 && lifetimeCookies >= 275) {
 		ent->client->pers.inventory[10] = 1;
-		gi.bprintf(PRINT_HIGH, "Unlocked drones\n");
+		gi.bprintf(PRINT_HIGH, "Unlocked drones.\n");
 	}
 	if (ent->client->pers.inventory[11] != 1 && lifetimeCookies >= 1500) {
 		ent->client->pers.inventory[11] = 1;
-		gi.bprintf(PRINT_HIGH, "Unlocked robots\n");
+		gi.bprintf(PRINT_HIGH, "Unlocked robots.\n");
 	}
 	if (ent->client->pers.inventory[13] != 1 && lifetimeCookies >= 8125) {
 		ent->client->pers.inventory[13] = 1;
-		gi.bprintf(PRINT_HIGH, "Unlocked lasers\n");
+		gi.bprintf(PRINT_HIGH, "Unlocked lasers.\n");
 	}
 
 	gclient_t	*client;
